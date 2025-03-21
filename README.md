@@ -19,6 +19,24 @@ File or Folder | Purpose
 - (in VS Code simply choose _**Terminal** > Run Task > cds watch_)
 - Start adding content, for example, a [db/schema.cds](db/schema.cds).
 
+## Podman commands
+
+For this training we're using Podman instead of Docker, so here are the commands for the solution:
+
+- `podman build -f ./Dockerfile --tag demo:latest`
+- `podman images`
+- `podman container run -it --rm -p 4004:4004 -d --name DemoContainer localhost/demo:latest`
+- `podman container ls`
+- `podman stop DemoContainer`
+- `podman image rm localhost/demo`
+
+Attaching to the running session can be done with:
+
+```
+podman attach DemoContainer
+```
+
+Detaching can be done using the default CTRL+P,CTRL+Q combination.
 
 ## Learn More
 
